@@ -35,6 +35,4 @@ public class Group {
     public String getUid(){
         return uid;
     }
-
-
 }

@@ -24,5 +24,4 @@ public interface GroupDao {
 
     @Delete
     void delteGroup(Group... groups);
-
 }

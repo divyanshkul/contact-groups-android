@@ -24,5 +24,4 @@ public abstract class AppDatabase extends RoomDatabase{
     public abstract GroupDao getGroupDao();
     public abstract ContactNumberDao getContactNumberDao();
     public abstract ContactGroupDao getContactGroupDao();
-
 }

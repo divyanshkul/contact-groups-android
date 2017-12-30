@@ -48,5 +48,4 @@ public class ContactGroup {
     public String getUid(){
         return uid;
     }
-
 }

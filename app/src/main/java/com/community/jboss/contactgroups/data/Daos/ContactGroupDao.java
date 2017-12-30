@@ -24,6 +24,4 @@ public interface ContactGroupDao {
 
     @Update
     void updateContactGroup(ContactGroup... contactGroups);
-
-
 }
