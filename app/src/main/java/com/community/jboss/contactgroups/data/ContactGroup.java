@@ -1,26 +1,40 @@
 package com.community.jboss.contactgroups.data;
 
-import com.orm.SugarRecord;
-import com.orm.dsl.Table;
+
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+import com.community.jboss.contactgroups.data.typeConverter;
+
+import java.util.UUID;
 
 /**
  * Associative entity for a many-to-many relationship
  * between a Contact and a Group
  */
-@Table
-public class ContactGroup extends SugarRecord {
+@Entity
+public class ContactGroup {
+    @PrimaryKey @NonNull
     private Contact contact;
     private Group group;
+    private String uid = UUID.randomUUID().toString();
 
     public ContactGroup() {
-        this(null, null);
-    }
 
-    public ContactGroup(Contact contact, Group group) {
+    }
+    @Ignore
+    ContactGroup(Contact contact, Group group) {
         this.contact = contact;
         this.group = group;
     }
-
+    @NonNull
+    public void setGroup(Group group){
+        this.group = group;
+    }
+    public void setContact(Contact contact){
+        this.contact = contact;
+    }
     public Group getGroup() {
         return group;
     }
@@ -28,4 +42,11 @@ public class ContactGroup extends SugarRecord {
     public Contact getContact() {
         return contact;
     }
+    public void setUid(String uid){
+        this.uid = uid;
+    }
+    public String getUid(){
+        return uid;
+    }
+
 }
